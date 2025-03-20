@@ -14,8 +14,7 @@ db.serialize(() => {
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     team TEXT NOT NULL,
     type TEXT NOT NULL,
-    champion_name TEXT NOT NULL,
-    time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    name TEXT NOT NULL,
     )
   `)
     db.run(`
@@ -23,8 +22,7 @@ db.serialize(() => {
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     team TEXT NOT NULL,
     type TEXT NOT NULL,
-    champion_name TEXT NOT NULL,
-    time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    name TEXT NOT NULL,
     )
   `)
 })
