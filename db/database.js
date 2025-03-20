@@ -9,4 +9,17 @@ db.run(`
     )
 `);
 
-module.exports = db;
+function insertUserData(id, userName, userAddress) {
+  const sql =  `
+    INSERT INTO USER(id, name, address) VALUES(?, ?, ?)
+  `
+  const insert = db.prepare(sql);
+  
+  insert.run(id, userName, userAddress);
+}
+
+
+module.exports = {
+  db,
+  insertUserData
+};
