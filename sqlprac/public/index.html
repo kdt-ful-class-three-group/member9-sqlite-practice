@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>밴픽 결과</h1>
+  <button onclick="dbData()">업데이트</button>
+  <h2>블루팀 밴</h2>
+  <ul id="blue-ban"></ul>
+  <h2>블루팀 픽</h2>
+  <ul id="blue-pick"></ul>
+  <h2>레드팀 밴</h2>
+  <ul id="red-ban"></ul>
+  <h2>레드팀 픽</h2>
+  <ul id="red-pick"></ul>
+  <script>
+    async function dbData(){
+      try {
+        const response = await fetch("http://localhost:8001/users");
+        const data = response.json();
+        
+        const blueBan = document.getElementById('blue-ban');
+        const bluePick = document.getElementById('blue-pick');
+        const redBan = document.getElementById('red-ban');
+        const redPick = document.getElementById('red-pick');
+
+        blueBan.innerHTML = "";
+        bluePick.innerHTML = "";
+        redBan.innerHTML = "";
+        redPick.innerHTML = "";
+
+        data.blue.ban.forEach(champ => {
+          const li = document.createElement("li");
+          li.textContent = champ.name;
+          blueBan.appendChild(li);
+        });
+
+        data.blue.pick.forEach(champ => {
+          const li = document.createElement("li");
+          li.textContent = champ.name;
+          bluePick.appendChild(li);
+        });
+
+        data.red.ban.forEach(champ => {
+          const li = document.createElement("li");
+          li.textContent = champ.name;
+          redBan.appendChild(li);
+        });
+
+        data.red.pick.forEach(champ => {
+          const li = document.createElement("li");
+          li.textContent = champ.name;
+          redPick.appendChild(li);
+        });
+
+      } catch(error) {
+        console.log("db데이터 가져오기실패 ㅋ")
+      }
+    }
+  </script>
+</body>
+</html>

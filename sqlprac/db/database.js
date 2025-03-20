@@ -1,3 +1,4 @@
+//* 데이터베이스 설정(테이블 생성)//
 import sqlite3 from "sqlite3";
 
 const db = new sqlite3.Database('./banpick.db', (err) => {
