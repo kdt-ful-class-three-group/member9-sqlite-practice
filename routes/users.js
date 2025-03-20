@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db/database');
 
-console.log(db);
-
+router.get('/data/user', (req, res) => {
+  console.log('in router');
+})
 
 module.exports = router;
