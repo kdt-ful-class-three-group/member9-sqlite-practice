@@ -1,0 +1,25 @@
+{
+  "name": "member9-sqlite-practice",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
+    "sqlite3": "^5.1.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdt-ful-class-three-group/member9-sqlite-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kdt-ful-class-three-group/member9-sqlite-practice/issues"
+  },
+  "homepage": "https://github.com/kdt-ful-class-three-group/member9-sqlite-practice#readme",
+  "description": ""
+}
