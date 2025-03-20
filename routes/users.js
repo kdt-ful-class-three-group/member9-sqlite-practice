@@ -1,4 +1,5 @@
 const express = require('express');
+const qs = require('querystring');
 const router = express.Router();
 const db = require('../db/database');
 
@@ -7,7 +8,11 @@ router.get('/data/user', (req, res) => {
 })
 
 router.post('/data/user', (req, res) => {
-  console.log('in post router');
+  req.on('data', (data) => {
+    const user = qs.parse(data.toString());
+    db.insertUserData(user.id, user.name, user.address);
+  })
+  res.redirect('/');
 })
 
 module.exports = router;

@@ -1,5 +1,5 @@
 const express = require('express');
-const user = require('./routes/users.js');
+const user = require('./routes/users');
 const app = express();
 const port = 8001;
 
