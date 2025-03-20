@@ -14,7 +14,7 @@ db.serialize(() => {
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     team TEXT NOT NULL,
     type TEXT NOT NULL,
-    name TEXT NOT NULL,
+    name TEXT NOT NULL
     )
   `)
     db.run(`
@@ -22,7 +22,7 @@ db.serialize(() => {
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     team TEXT NOT NULL,
     type TEXT NOT NULL,
-    name TEXT NOT NULL,
+    name TEXT NOT NULL
     )
   `)
 })
