@@ -9,6 +9,8 @@ app.get('/', (req, res) => {
 
 app.get('/data/user', user);
 
+app.post('/data/user', user);
+
 app.listen(port, () => {
   console.log(`서버 구동 중..(http://localhost:${port})`);
 })
