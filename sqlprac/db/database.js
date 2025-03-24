@@ -13,16 +13,17 @@ db.serialize(() => {
     CREATE TABLE IF NOT EXISTS ban(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     team TEXT NOT NULL,
-    type TEXT NOT NULL,
-    name TEXT NOT NULL
+    name TEXT NOT NULL,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+
     )
   `)
     db.run(`
     CREATE TABLE IF NOT EXISTS pick(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     team TEXT NOT NULL,
-    type TEXT NOT NULL,
-    name TEXT NOT NULL
+    name TEXT NOT NULL,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
     )
   `)
 })
